@@ -1,0 +1,47 @@
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fiximg {
+    max-height: 100%;
+    width: 500px;
+}
+
+.dropdown-toggle,
+.dropdown-menu {
+    border-radius: 5px;
+
+}
+.dropdown-menu{
+    margin: 0px;
+}
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+.margin-defult{
+    margin: 25px;
+}
+.padding-defult{
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.rounded-2{
+    border-radius: 0.50rem !important
+}
+.modal-header{
+    text-align: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.bg-default {
+    background-color: rgb(173, 187, 187);
+}
