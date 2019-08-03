@@ -19,10 +19,23 @@ Route::get('/berita','UserController@berita');
 Route::get('/berita/{id}','UserController@detail');
 
 // Profile
-Route::get('/profile/kecamatan', function () {
-    return view('/blogs/profile/profileKecamatan');
+Route::get('/profile/struktur', function () { //structure
+    return view('/blogs/profile/struktur');
 });
+Route::get('/profile/geografis','UserController@geografis' );
+Route::get('/profile/iklim', 'UserController@iklim'); //iklim
 
+Route::post('/profile/iklim', 'UserController@filter_iklim'); //filter iklim
+
+Route::get('/profile/desa', function (){ //desa
+    return view('/blogs/profile/desa');
+});
+Route::post('/profile/desa', 'UserController@filter_iklim'); //
+
+Route::get('/profile/penduduk', function (){ //penduduk
+    return view('/blogs/profile/penduduk');
+});
+Route::post('/profile/penduduk', 'UserController@filter_iklim');
 // search
 // Route::get('/search/result','UserController@result');
 Route::get('/search','UserController@search');

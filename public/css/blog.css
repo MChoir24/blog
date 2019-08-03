@@ -11,37 +11,122 @@
     width: 500px;
 }
 
+.fiximg-profile {
+    max-height: 100%;
+    width: 250px;
+}
+
 .dropdown-toggle,
 .dropdown-menu {
     border-radius: 5px;
-
 }
-.dropdown-menu{
+
+.dropdown-menu {
     margin: 0px;
 }
+
 .dropdown:hover>.dropdown-menu {
     display: block;
 }
-.margin-defult{
+
+.margin-defult {
     margin: 25px;
 }
-.padding-defult{
+
+.padding-defult {
     padding: 15px;
     margin-bottom: 15px;
 }
-.rounded-2{
+
+.rounded-2 {
     border-radius: 0.50rem !important
 }
-.modal-header{
+.rounded-3 {
+    border-radius: 1.00rem !important
+}
+.modal-header {
     text-align: center;
 }
 
 .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
+
 .bg-default {
     background-color: rgb(173, 187, 187);
+}
+
+.core {
+    position: relative;
+    min-height: 800px;
+}
+
+.navbar-fixed-left {
+    width: 140px;
+    position: fixed;
+    border-radius: 0;
+    height: 100%;
+}
+
+.navbar-fixed-left .navbar-nav>li {
+    float: none;
+    /* Cancel default li float: left */
+    width: 139px;
+}
+
+.navbar-fixed-left+.container {
+    padding-left: 160px;
+}
+
+/* On using dropdown menu (To right shift popuped) */
+.navbar-fixed-left .navbar-nav>li>.dropdown-menu {
+    margin-top: -50px;
+    margin-left: 140px;
+}
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#return-to-top:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
 }

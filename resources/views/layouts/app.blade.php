@@ -12,10 +12,14 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/blog.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+    <!-- ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
@@ -23,8 +27,10 @@
     <link href="{{ asset('css/blog.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
+{{-- {{ dd($blogs) }} --}}
 
 <body class="bg-default">
+    <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light shadow bg-light fixed-top" id="mynav">
             <div class="container">
@@ -37,7 +43,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link @yield('active')" href="/">Beranda</a>
                         </li>
@@ -49,35 +55,33 @@
                                 Profil
                             </div>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="/profile/kecamatan">Profil Kecamatan</a>
-                                <a class="dropdown-item" href="#">Struktur</a>
-                                <a class="dropdown-item" href="#">letak geografis</a>
-
+                                <a class="dropdown-item" href="/profile/struktur">Struktur</a>
+                                <a class="dropdown-item" href="/profile/geografis">letak geografis</a>
+                                <a class="dropdown-item" href="/profile/iklim">Iklim</a>
+                                <a class="dropdown-item" href="/profile/penduduk">Penduduk</a>
+                                <a class="dropdown-item" href="/profile/desa">Desa/Kelurahan</a>
                             </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @yield('active3')" href="/tentang">Tentang</a>
                         </li>
-                        <li class="ml-2 nav-item">
-                            <form class="" action="/search" method="post">
-                                <input class="nav-link" type="text" name="word" value="" placeholder="Cari">
-                                {{ csrf_field() }}
-                            </form>
-                        </li>
                     </ul>
+                    <form class="ml-auto" action="/search" method="post">
+                        <input class="nav-link rounded-2 form-control" type="text" name="word" value="" placeholder="Cari">
+                        {{ csrf_field() }}
+                    </form>
                 </div>
             </div>
     </div>
     </nav>
 
 
-    <main class="py-4" style="margin-top: 55px;">
+    <main class="core py-4" style="margin-top: 55px;">
         @yield('content')
     </main>
-    </div>
 
     <!-- Footer -->
-    <footer class="page-footer font-small blue bg-light">
+    <footer class="page-footer footer font-small blue bg-light">
         <div class="links ">
             <a href="https://laravel.com/docs">Docs</a>
             <a href="https://laracasts.com">Laracasts</a>
