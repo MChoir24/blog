@@ -27,16 +27,15 @@ Route::get('/profile/iklim', 'UserController@iklim'); //iklim
 
 Route::post('/profile/iklim', 'UserController@filter_iklim'); //filter iklim
 
-Route::get('/profile/desa', function (){ //desa
-    return view('/blogs/profile/desa');
-});
-Route::post('/profile/desa', 'UserController@filter_iklim'); //
+Route::get('/profile/desa', 'UserController@desa');// desa
 
-Route::get('/profile/penduduk', function (){ //penduduk
-    return view('/blogs/profile/penduduk');
-});
-Route::post('/profile/penduduk', 'UserController@filter_iklim');
+Route::post('/profile/desa', 'UserController@desa'); // desa
+
+Route::get('/profile/penduduk', 'UserController@penduduk'); //penduduk
+
+Route::post('/profile/penduduk', 'UserController@filter_penduduk'); //filter penduduk
 // search
+
 // Route::get('/search/result','UserController@result');
 Route::get('/search','UserController@search');
 Route::post('/search','UserController@search1');

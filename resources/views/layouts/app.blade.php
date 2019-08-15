@@ -30,7 +30,7 @@
 {{-- {{ dd($blogs) }} --}}
 
 <body class="bg-default">
-    <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+    {{-- <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a> --}}
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light shadow bg-light fixed-top" id="mynav">
             <div class="container">
@@ -76,6 +76,7 @@
     </nav>
 
 
+
     <main class="core py-4" style="margin-top: 55px;">
         @yield('content')
     </main>
@@ -98,7 +99,9 @@
 
     </footer>
     <!-- Footer -->
-
+    
+    {{-- back to top --}}
+    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><i class="icon-chevron-up"></i></a>
 </body>
 
 </html>

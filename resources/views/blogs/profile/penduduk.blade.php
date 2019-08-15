@@ -10,9 +10,12 @@
             <div class="col-sm-3">
                 <select name="tahun" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
                     <option selected>Tahun...</option>
-                    <option value="11">2011</option>
-                    <option value="12">2012</option>
-                    <option value="13">2013</option>
+                    @foreach ($tahun as $key)
+                        @php
+                            $thn = substr($key->id, 0, 2);
+                        @endphp
+                        <option value={{ $thn }}>20{{ $thn }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="col-sm">
@@ -32,13 +35,21 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>0-4</td>
-                <td>xxx</td>
-                <td>xxx</td>
-                <td>xxx</td>
-            </tr>
+            @php
+                $no = 1;
+            @endphp
+            @foreach ($penduduks as $penduduk)
+                <tr>
+                    <th scope="row">{{ $no }}</th>
+                    <td>{{ $penduduk->umur }}</td>
+                    <td>{{ $penduduk->laki }}</td>
+                    <td>{{ $penduduk->perempuan }}</td>
+                    <td>{{ $penduduk->jumlah }}</td>
+                </tr>
+                @php
+                    $no+=1;
+                @endphp
+            @endforeach
         </tbody>
     </table>
 </div>
